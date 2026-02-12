@@ -1,9 +1,12 @@
-import {Router} from "express";
-import weather from "../controllers/weather.js"
+import { Router } from "express";
+import weather, { getStats } from "../controllers/weather.js";
 
-const router = Router()
+const router = Router();
 
+// Stats endpoint (should be first to avoid conflict with /:city)
+router.get('/stats', getStats);
 
-router.get('/:city', weather)
+// Weather by city
+router.get('/:city', weather);
 
-export default router
+export default router;
