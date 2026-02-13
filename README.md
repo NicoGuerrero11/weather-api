@@ -212,12 +212,7 @@ curl http://localhost:3000/stats
 
 Run the test suite:
 ```bash
-pnpm test
-```
-
-Run tests in watch mode:
-```bash
-pnpm test:watch
+docker-compose run --rm test
 ```
 
 ## Rate Limiting
