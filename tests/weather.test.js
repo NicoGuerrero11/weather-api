@@ -20,6 +20,8 @@ describe('GET /:city', () => {
         if (client.isReady) {
             await client.quit();
         }
+        // Dar tiempo para que la conexión se cierre completamente
+        await new Promise(resolve => setTimeout(resolve, 100));
     });
 
     it('should return 400 if no city is provided', async () => {

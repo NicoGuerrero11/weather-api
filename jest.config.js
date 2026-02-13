@@ -4,7 +4,8 @@ export default {
     moduleNameMapper: {
         '^(\\.{1,2}/.*)\\.js$': '$1',
     },
-    testMatch: ['**/__tests__/**/*.test.js'],
+    testMatch: ['**/tests/**/*.test.js'],
+    testTimeout: 30000, // 30 segundos para conexiones a Redis y APIs externas
     collectCoverageFrom: [
         'controllers/**/*.js',
         'model/**/*.js',

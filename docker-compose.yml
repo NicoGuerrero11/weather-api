@@ -47,6 +47,22 @@ services:
       - .:/app
       - /app/node_modules
 
+  test:
+    build: .
+    env_file:
+      - .env
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - NODE_ENV=test
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: pnpm test
+
 volumes:
   redis_data:
     driver: local
