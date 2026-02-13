@@ -1,21 +1,34 @@
 {
   "name": "weather-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch ./main.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "Weather API with Redis caching and Docker support",
+  "main": "main.js",
   "type": "module",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "node --watch main.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
+
+  },
+  "keywords": [
+    "weather",
+    "api",
+    "redis",
+    "cache",
+    "express"
+  ],
+  "author": "Nico Guerrero",
+  "license": "ISC",
   "dependencies": {
-    "axios": "1.12.2",
-    "dotenv": "17.2.3",
-    "express": "5.1.0",
-    "express-rate-limit": "8.1.0",
-    "redis": "5.8.3"
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "redis": "^5.8.3"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "supertest": "^7.2.2"
   }
 }
